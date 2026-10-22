@@ -31,7 +31,7 @@ button:active{transform:translateY(2px)}button:disabled{opacity:.35}
 .row{display:flex;gap:8px;align-items:center}.seg button{padding:8px 12px;font-size:14px}.seg button.off{opacity:.35}
 .prow{display:flex;align-items:center;justify-content:space-between;gap:8px;width:320px;padding:6px 10px;margin:5px auto;background:#ffffff0c;border-radius:8px}
 .dot{width:14px;height:14px;border-radius:50%;display:inline-block}
-</style></head><body>
+</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%90%AD%3C/text%3E%3C/svg%3E"><link rel="manifest" href="manifest.json"></head><body>
 <canvas id="gl"></canvas><div id="vig"></div><div id="flash"></div>
 <div id="hdr"><h1>Whisker Works<small>NIGHT SHIFT</small></h1><div class="row"><div id="dice">⚀</div><button id="mute">🔊</button></div></div>
 <div id="toast" style="opacity:0"></div>
@@ -263,4 +263,5 @@ window.__stage=(what)=>{$('title').classList.add('hide');reset();G.p.forEach((p,
  const nb=what=='crank'?8:5;for(let k=0;k<nb;k++){G.built++;PIECE[k].visible=true;PIECE[k].scale.setScalar(1.35);PIECE[k].userData.ghost.visible=false}if(nb==8)CAGE.visible=true;
  G.turn=0;ui();focus(MM[0].position);say('Your turn, Pip. Roll…')};
 if(location.hash=='#board')__stage('board');
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 </script></body></html>
